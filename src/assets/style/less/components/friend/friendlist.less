@@ -1,0 +1,51 @@
+.friendcontent{
+    height: calc(100% - @customHeight);
+    overflow: hidden;
+    .friendlist{
+        height:100%;
+        .friend-total,.sder{
+            line-height: 37px;
+            .flexbox;
+            justify-content: center;
+            color:#BEBEBE;
+            font-size:12px;
+            .friend-line{
+                width: 48px;
+                height: 1px;
+                background: #DEDEDE;
+            }
+            .total-count{
+                margin:0 5px;
+            }
+        }
+        .letter{
+            color:#C1C1C1;
+            padding-left:10px;
+            font-size:12px;
+            line-height: 20px;
+            background:#fcfcfc;
+        }
+        .friend-row{
+            padding:10px;
+            height:54px;
+            cursor: pointer;
+            .flexbox;
+            .friend-avatar{
+                width:34px;
+                height:34px;
+                flex-shrink: 0;
+            }
+            .friend-name{
+                .overell;
+                flex:1;
+                padding:0 10px;
+            }
+            &:hover,&.hover{
+                background:#FBFBFB;
+            }
+            &.on{
+                background: #EDEFF3;
+            }
+        }
+    }
+}

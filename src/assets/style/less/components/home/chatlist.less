@@ -1,0 +1,145 @@
+.chatlist{
+    height:calc(100% - @customHeight);
+    overflow: hidden;
+    .tioim-chat-list{
+        height:100%;
+    }
+    .chat-col{
+        .flexbox;
+        height:60px;
+        padding:10px;
+        cursor: pointer;
+        position: relative;
+        &:hover,&.hover{
+            background:#FBFBFB;
+        }
+        &.active{
+            background:#EDEFF3;
+        }
+        .chat-avatar{
+            width:40px;
+            height:40px;
+            flex-shrink: 0;
+        }
+        .triangtop{
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: 6px solid transparent;
+            border-left: @fontblue solid 6px;
+            border-top: @fontblue solid 6px;
+            z-index: 10;
+            border-top-left-radius: 4px;
+        }
+        .chat-col-right{
+            flex:1;
+            padding-left:10px;
+            overflow: hidden;
+            .chat-info-top,.chat-info-bottom{
+                .flexbox;
+                .overell;
+                margin-top:1px;
+                justify-content: space-between;
+                .chat-name{
+                    line-height: 20px;
+                    .overell;
+                    max-width: 180px;
+                }
+                .chat-notread{
+                    flex-shrink: 0;
+                    background: #FB7B7A;
+                    /* box-shadow:0px 4px 6px #F34F4F; */
+                    color: #fff;
+                    text-align: center;
+                    padding: 0 9px;
+                    height: 16px;
+                    line-height: 16px;
+                    font-size: 12px;
+                    border-radius: 8px;
+                }
+            }
+            .chat-info-bottom{
+                font-size:12px;
+                color:#B9B9B9;
+                line-height: 18px;
+                .chat-last-msg{
+                    .overell;
+                    .msgfreeNotread{
+                        color: #999;
+                    }
+                }
+                .chat-last-time{
+                    flex-shrink: 0;
+                }
+                .notread{
+                    color:@fontblue;
+                }
+                .rtcicon{
+                    font-size:24px;
+                    color:@fontblue;
+                }
+            }
+        }
+        .chat-last-bot{
+            color:#999;
+        }
+        .chat-msgfree{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            .icon_msgfree{
+                width: 20px;
+                height: 20px;
+            }
+            .icon_msgfree_notread{
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 50px;
+                background: #FB7B7A;
+                right: 3px;
+            }
+        }
+    }
+    .tmcheckbox{
+        .flexbox;
+        color:#999;
+        justify-content: center;
+        margin-top:5px;
+        input[type='checkbox']{
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            background-color: #fff;
+            -webkit-appearance:none;
+            border: 1px solid #3A7BE9;
+            border-radius: 2px;
+            outline: none;
+            flex-shrink: 0;
+            margin-right:10px;
+        }
+        input[type='checkbox']:disabled{
+            cursor: no-drop;
+            border: 1px solid #ccc;
+            background-color: #ccc;
+        }
+        input[type=checkbox]:checked{
+            border: 0;
+        }
+        input[type=checkbox]::before{
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            text-align: center;
+        }
+        input[type=checkbox]:checked::before {
+            display: block;
+            content: "";
+            background:url(~@/assets/imgs/common/allcheck.png) no-repeat center center;
+            color: #fff;
+            background-size: 16px 16px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+}

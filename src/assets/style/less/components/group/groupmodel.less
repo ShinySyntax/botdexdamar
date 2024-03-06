@@ -1,0 +1,315 @@
+.groupnotice{
+    width:397px;
+    .definescroll;
+    .notice-content{
+        margin:0 30px;
+        .notice-time{
+            line-height: 21px;
+            color:#999;
+            font-size:12px;
+        }
+        .info-notice{
+            height:221px;
+            padding:7px;
+            border:1px solid #F1F1F1;
+            line-height: 17px;
+            font-size:12px;
+            overflow: auto;
+        }
+    }
+    .areacontainer{
+        margin:0 30px 30px;
+        height:180px;
+        textarea{
+            height:150px;
+        }
+    }
+}
+.editnick{
+    .groupipt{
+        margin:0 30px 30px;
+        border:1px solid #f1f1f1;
+        width:calc(100% - 60px);
+        padding: 5px 7px;
+        line-height:20px;
+        display:flex;
+        border-radius: 2px;
+        margin-bottom:30px;
+        input{
+            flex:1;
+        }
+        .num-count{
+            color:#C9C9C9;
+            font-size:10px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+    }
+}
+.areacontainer{
+    border:1px solid #f1f1f1;
+    padding: 6px 7px 3px;
+    border-radius: 2px;
+    textarea{
+        outline: none;
+        border: none;
+        resize: none;
+        font-size:12px;
+        width: 100%;
+        height: 34px;
+        padding: 0;
+    }
+}
+.num-count{
+    color:#C9C9C9;
+    font-size:10px;
+    text-align: right;
+    flex-shrink: 0;
+}
+/* 自定义滚动条样式 */
+.definescroll{
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    ::-webkit-scrollbar-track-piece{
+        background-color:#fff;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: #DFDFDF;
+        border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #DFDFDF;
+    }
+}
+.transContent{
+    padding:0 20px;
+    width:342px;
+    background: #fff;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    height: 52vh;
+    .trans-title{
+        height: 60px;
+        line-height: 60px;
+        .flexbox;
+        justify-content: space-between;
+        .closeicon{
+            font-size:24px;
+            cursor: pointer;
+        }
+    }
+    .tm-search-friend{
+        margin:0;
+        width:100%;
+        margin-bottom:8px;
+        height: 30px;
+        border-radius: 4px;
+        padding-left:23px;
+        .flexbox;
+        i {
+            font-size: 20px;
+            color: #ccc;
+        }
+    }
+    .tm-search-input{
+        width:250px;
+        border:none;
+        margin-left:2px;
+    }
+    .trans-col{
+        height:54px;
+        padding:10px;
+        line-height: 34px;
+        .flexbox;
+        cursor: pointer;
+        &:hover{
+            background: #EDEFF3;
+        }
+        .trans-col_img{
+            width:34px;
+            height:34px;
+        }
+        span{
+            padding-left:10px;
+            .overell;
+        }
+    }
+    .transbody{
+        height:calc(52vh - 105px);
+    }
+    .noremind{
+        color:#999;
+        text-align: center;
+        line-height: 100px;
+    }
+}
+.trans-user{
+    color:@mainblue;
+}
+.choose-title{
+    .flexbox;
+    span{
+        flex:1;
+    }
+}
+.letter-index{
+    color: #999;
+    font-size: 12px;
+    line-height: 20px;
+}
+.prohibit-modelbody{
+  .singletitle{
+    padding: 19px 0 15px 30px;
+    text-align: left;
+  }
+  .m-prohibit-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 25px; 
+      height: 50px;
+      span{
+          font-size: 16px;
+          color: #333333;
+      }
+      img{
+          width: 25px;
+          height: 25px;
+      }
+  }
+  .button-group{
+    margin-top: 10px;
+  }
+}
+.m-checkbox {
+color: #666;
+display: inline-block;
+line-height: 20px;
+cursor: pointer;
+input[type="checkbox"] {
+  appearance: none;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  background: url(~@/assets/imgs/group/check.png) no-repeat;
+  background-size: 100% 100%;
+}
+input[type="checkbox"]:checked {
+  background: url(~@/assets/imgs/group/checked.png) no-repeat;
+  background-size: 100% 100%;
+}
+}
+.remove-modelbody{
+  z-index: 2000;
+}
+.modifyReview-modelbody{
+    width: 285px;
+    height: 202px;
+    .reviewTips{
+      padding: 22px 28px 24px;
+      color: #333;
+      font-size: 14px;
+    }
+    .content{
+      text-align: center;
+      position: relative;
+    }
+    .wordLimit{
+      position: absolute;
+      left: 80%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    /deep/ .el-input__inner{
+        width: 225px;
+        height: 30px !important;
+    }
+    .button-group{
+        margin-top: 30px;
+    }
+}
+.auditProcessing-modelbody{
+    width: 800px;
+    // height: 535px;
+    .iconfont{
+      position: absolute;
+      top: 18px;
+      right: 23px;
+      font-size: 24px;
+    }
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
+        padding-top: 34px;
+        .invitees_avatar{
+            width: 44px;
+            height: 44px;
+        }
+        .invitees_nick{
+            color: #333333;
+            font-size: 12px;
+            margin-bottom: 25px;
+            margin-top: 8px;
+        }
+        .invitees_reasons{
+            width: 540px;
+            height: 60px;
+            background: #F8F8F8;
+            border-radius: 4px;
+            margin-top: 17px;
+            line-height: 60px;
+            padding-left: 20px;
+        }
+    }
+    ::-webkit-scrollbar {
+      /*隐藏滚轮*/
+      display: none;
+      }
+    .content{
+        border-bottom: solid #F5F5F5 1px;
+        padding: 14px 28px;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        height: 200px;
+        overflow-y: scroll !important;
+        .user_item{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 106px;
+            height: 80px;
+            p{
+              margin-top: 8px;
+            }
+        }
+        .row-avatar{
+            width: 50px;
+            height: 50px;
+        }
+        p{
+            font-size: 14px;
+            color: #333;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            word-break: break-all;
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .flexCenter{
+        justify-content: center
+    }
+    .flexStart{
+        justify-content: flex-start;
+    }
+    .button-group{
+        margin-top: 30px;
+    }
+}

@@ -1,0 +1,204 @@
+.bodycontent {
+  background: url(~@/assets/imgs/login/bgx.png) no-repeat;
+  background-size: 100% 100%;
+}
+.bothref {
+  margin-top: 21px;
+  display: block;
+  margin-top: 10px;
+  text-align: left;
+  color: #999999;
+}
+.bothref a {
+  color: #3b8aff;
+}
+.form-content {
+  /* background: url(~@/assets/imgs/login/topball.png) no-repeat 59px 14px; */
+  width: 537px;
+  padding-top: 20vh;
+}
+.form-content .login-content {
+  padding-left: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-content .title {
+  font-size: 28px;
+  line-height: 40px;
+  padding-bottom: 6vh;
+}
+.form-content .title span {
+  padding-left: 15px;
+}
+.form-content .form-tab {
+  font-size: 20px;
+  color: #999999;
+  width: 300px;
+  display: flex;
+  margin-bottom: 44px;
+}
+.form-content .form-tab ul {
+  display: flex;
+}
+.form-content .form-tab ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-content .form-tab ul li:first-child {
+  margin: 0 50px 0 13px;
+}
+.form-content .tab-border-bottom {
+  background: #3b8aff;
+  width: 52px;
+  height: 2px;
+  margin-top: 8px;
+}
+.form-content .form-tab-active {
+  color: #3b8aff;
+}
+.form-content .user-form {
+  /* .tootherbtn{
+            background: #fff;
+            box-shadow: none;
+            color:#333;
+        } */
+}
+.form-content .user-form .input-row {
+  height: 42px;
+  border-radius: 50px;
+  background: #e1efff;
+  padding: 0 17px;
+  width: 250px;
+}
+.form-content .user-form .input-row .iconfont {
+  font-size: 24px;
+  height: 24px;
+  line-height: 24px;
+  color: #999;
+}
+.form-content .user-form .input-row .icon-pwd {
+  font-size: 24px;
+  height: 24px;
+  line-height: 24px;
+}
+.form-content .user-form .input-row .user-input {
+  display: flex;
+  flex: 1;
+  margin: 0 2px;
+}
+.form-content .user-form .input-row .user-input /deep/ .el-input__inner {
+  line-height: 20px;
+  padding: 0 2px;
+  border: none;
+  height: 20px;
+  color: #333;
+  background: none;
+}
+.form-content .user-form .bigbtn {
+  width: 250px;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 25px;
+  margin-top: 7px;
+}
+.form-content .user-form .bot-group {
+  width: 250px;
+  text-align: right;
+}
+.form-content .user-form .bot-group span {
+  font-size: 12px;
+  line-height: 17px;
+  color: #4c94ff;
+  cursor: pointer;
+}
+.form-content .user-form .bot-group .forget-pwd {
+  color: #999;
+}
+.form-content .user-form /deep/ .el-form-item {
+  margin-bottom: 10px;
+}
+.form-content .user-form /deep/ .el-form-item__error {
+  padding-left: 22px;
+}
+.form-content .user-form .mobile-login {
+  width: 250px;
+  color: #3b8aff;
+  text-align: center;
+  margin-top: 20px;
+}
+.otherLogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  bottom: 60px;
+  margin: auto;
+}
+.otherLogin .otherLogin_tips {
+  color: #efefef;
+}
+.otherLogin .otherLogin_tips .tips_span {
+  color: #bbbbbb;
+}
+.otherLogin .otherLogin_list {
+  margin: 13px 0 80px;
+}
+.otherLogin .otherLogin_list img {
+  width: 48px;
+  height: 48px;
+}
+.swiper-content {
+  flex: 1;
+}
+.swiper-content .carousel-img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+.swiper-content .carousel-img.carousel-img0,
+.swiper-content .carousel-img.carousel-img1,
+.swiper-content .carousel-img.carousel-img3,
+.swiper-content .carousel-img.carousel-img4 {
+  transform: translate(-44%, -50%);
+}
+.swiper-content /deep/ .el-carousel__button {
+  width: 8px;
+  height: 3px;
+  border-radius: 3px;
+}
+.swiper-content /deep/ .el-carousel__indicator.is-active button {
+  width: 16px;
+}
+.modelbody {
+  color: #999;
+}
+.modelbody p {
+  line-height: 20px;
+  text-align: center;
+  margin: 2px 0;
+}
+.modelbody .success-icon {
+  font-size: 26px;
+  display: block;
+  margin: 20px 0 22px;
+  text-align: center;
+  color: #8cc3fc;
+}
+.modelbody .send-email {
+  color: #333;
+  margin: 8px 0;
+}
+.modelbody .button-group {
+  padding-top: 28px;
+}
+.modelbody .success-register {
+  padding: 0 30px;
+  max-width: 300px;
+}

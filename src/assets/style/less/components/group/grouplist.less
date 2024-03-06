@@ -1,0 +1,65 @@
+.groupcontent{
+    height: calc(100% - @customHeight);
+    overflow: hidden;
+    .grouplist{
+        height:100%;
+    }
+    .group-total{
+        line-height: 37px;
+        .flexbox;
+        justify-content: center;
+        color:#BEBEBE;
+        font-size:12px;
+        .group-line{
+            width: 48px;
+            height: 1px;
+            background: #DEDEDE;
+        }
+        .total-count{
+            margin:0 5px;
+        }
+    }
+    .group-row{
+        padding:10px;
+        height:60px;
+        cursor: pointer;
+        .flexbox;
+        .group-avatar{
+            width:40px;
+            height:40px;
+            flex-shrink: 0;
+        }
+        .row-right{
+            .overell;
+            flex:1;
+            padding:0 10px;
+            .group-name{
+                line-height: 20px;
+                .overell;
+            }
+            .group-num{
+               color: #B9B9B9;
+               font-size:12px;
+               line-height: 20px;
+               span{
+                 padding-top: 3px
+               }
+               .flexbox;
+               img{
+                   width: 30px;
+                   height: 22px;
+                   margin-right: 2px;
+               }
+               .icon_admin{
+                 height: 18px;
+               }
+            }
+        }
+        &:hover,&.hover{
+            background:#FBFBFB;
+        }
+        &.on{
+            background: #EDEFF3;
+        }
+    }
+}

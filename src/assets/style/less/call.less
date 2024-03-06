@@ -1,0 +1,191 @@
+
+.modelbody{
+    padding-bottom:0 !important;
+    .audiomain{
+        background: radial-gradient(circle, #577197 0%, #243B5E 100%);
+        width:330px;
+        height:400px;
+        text-align: center;
+    }
+    .audio-avatar{
+        width:60px;
+        height: 60px;
+        margin: 30px auto 6px;
+    }
+    .audio-nick{
+        color:#fff;
+        line-height: 20px;
+        margin-bottom:63px;
+        text-align: center;
+        .overell;
+    }
+    .waiting-msg,.call-time{
+        font-size:12px;
+        color:#fff;
+        text-align: center;
+        margin-bottom:43px;
+    }
+    .callbtn{
+        width:100px;
+        height:34px;
+        border-radius:4px;
+        line-height: 34px;
+        text-align: center;
+        cursor: pointer;
+        color:#fff;
+    }
+    .canclebtn{
+        background: linear-gradient(44deg, #E87D7D 0%, #F04B4B 100%);
+    }
+    .agreebtn{
+        background: linear-gradient(127deg, #72ABFF 0%, #3B8AFF 100%);
+        margin-left:60px;
+    }
+    .audiowave{
+        width:265px;
+        height: 43px;
+        margin-bottom:49px;
+    }
+}
+.callercontent{
+    width:722px;
+    height: 416px;
+    background:none;
+    box-shadow: none;
+    video{
+        width:100%;
+        height: 100%;
+        background: radial-gradient(circle, #577197 0%, #243B5E 100%);
+    }
+    .left-big-content{
+        width:480px;
+        height:360px;
+        position: absolute;
+        left:0;
+        top:0;
+        background: radial-gradient(circle, #577197 0%, #243B5E 100%);
+        .video-bigavatar{
+            width:100%;
+            height:100%;
+            filter: blur(6px);
+        }
+        video{
+            width:100%;
+            height:100%;
+        }
+    }
+    .right-sml-content{
+        width:206px;
+        height:154px;
+        box-shadow:0px 6px 20px 0px rgba(48,52,58,0.5);
+        background: radial-gradient(circle, #577197 0%, #243B5E 100%);
+        border-radius:4px;
+        position:absolute;
+        right:0;
+        bottom:0;
+        overflow: hidden;
+        .video-bigavatar,.image-slot{
+            width:100%;
+            height:100%;
+            border-radius: 4px;
+        }
+    }
+    .opera-content{
+        .flexbox;
+        padding:10px;
+        box-shadow:0px 6px 20px 0px rgba(48,52,58,0.5);
+        height:56px;
+        width: 480px;
+        background: #092043;
+        position: absolute;
+        bottom:0;
+        left:0;
+        .opera-left,.opera-right{
+            flex-shrink: 0;
+            .flexbox;
+        }
+        .agreebtn{
+            margin-left: 10px;
+        }
+        .opera-center{
+            flex:1;
+            text-align: center;
+        }
+        .calleravatar{
+            width:40px;
+            height: 40px;
+            margin-right:10px;
+            flex-shrink: 0;
+            border-radius: 4px;
+        }
+        .audio-nick{
+           margin-bottom:0;
+        }
+    }
+    .calltips{
+        position: absolute;
+        margin: auto;
+        text-align: center;
+        color: #fff;
+        font-size: 16px;
+        z-index: 10;
+        left: 0;
+        right: 0;
+        top:0;
+        line-height: 360px;
+    }
+    .iconfull{
+        margin-left:10px;
+        font-size:24px;
+        color:#fff;
+        cursor: pointer;
+    }
+}
+.fullscreen{
+    overflow: visible;
+    object-fit: contain;
+    position: fixed !important;
+    top: 0px !important;
+    right: 0px !important;
+    bottom: 0px !important;
+    left: 0px !important;
+    box-sizing: border-box !important;
+    min-width: 0px !important;
+    max-width: none !important;
+    min-height: 0px !important;
+    max-height: none !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: none !important;
+    margin: 0px !important;
+    background: #000;
+    z-index: 10000000 !important;
+    .callercontent{
+        width: 80%;
+        height: 100%;
+    }
+    .exchange-content{
+        height: 100%;
+    }
+    .playcontent{
+        width: 100%;
+        height: calc(100% - 56px);
+    }
+    .right-sml-content{
+        width: 24vw;
+        max-width: 462px;
+        height:auto;
+        right:0;
+        bottom:54px;
+        z-index: 999;
+    }
+    .opera-content{
+        width:100%;
+    }
+}
+.wxCallLocalVideo{
+    transform: rotateY(180deg);
+}
+.talktime{
+    color:#fff;
+}

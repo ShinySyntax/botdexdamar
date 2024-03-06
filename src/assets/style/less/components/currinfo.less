@@ -1,0 +1,194 @@
+.modelbody{
+    width:373px;
+    .title{
+        line-height: 60px;
+        padding:0 30px;
+    }
+    .update-item{
+        .flexbox;
+        padding:7px 30px;
+        line-height: 17px;
+        font-size:12px;
+        .update-item_label{
+            color:#999;
+            width:36px;
+            padding-right:12px;
+            text-align: right;
+        }
+        .input-col{
+            border:1px solid #f1f1f1;
+            padding: 5px 7px;
+            display:flex;
+            border-radius: 2px;
+            flex: 1;
+            input{
+                font-size:12px;
+                flex:1;
+            }
+        }
+        .num-count{
+            color:#C9C9C9;
+            font-size:10px;
+            text-align: right;
+            flex-shrink: 0;
+        }
+        .update-sign{
+            border:1px solid #f1f1f1;
+            padding: 6px 7px 3px;
+            border-radius: 2px;
+            flex: 1;
+            textarea{
+                outline: none;
+                border: none;
+                resize: none;
+                font-size:12px;
+                width: 100%;
+                height: 34px;
+                padding: 0;
+            }
+        }
+        .info-item_set{
+            .flexbox;
+            &+.info-item_set{
+                margin-top:5px;
+            }
+            .search-set{
+                flex:1;
+            }
+            .search-status{
+                flex-shrink: 0;
+                color:#999;
+            }
+        }
+        .sex-col{
+            flex:1;
+        }
+        .sex-select{
+            height:27px;
+            width:100%;
+            font-size:12px;
+            /deep/.el-input{
+                width:100%;
+                .el-input__inner{
+                    height:27px;
+                    font-size:12px;
+                    width:100%;
+                    padding-left: 7px;
+                }
+                .el-input__icon{
+                    line-height: 27px;
+                }
+            }
+        }
+        .self-label_top{
+            align-self: flex-start;
+            line-height: 20px;
+        }
+        .update-col{
+            text-align: left;
+            flex:1;
+            .area-tips{
+                color:#999;
+            }
+        }
+    }
+    .button-group{
+        margin-top:30px;
+    }
+}
+.tailoring-container{
+    width: 736px;
+    height: 550px;
+    padding: 5px;
+    overflow: hidden;
+    .ff44 {
+        height: 500px;
+        position: relative;
+    }
+    .tailoring-box-parcel{
+        width: 520px;
+        height: 495px;
+        position: absolute;
+        left: 0;
+        border: solid 1px #ddd;
+    }
+    .preview-box-parcel{
+        display: inline-block;
+        width: 200px;
+        height: 450px;
+        position: absolute;
+        right: 0;
+        p{
+            color: #555;
+        }
+        .circular {
+            margin-top: 5px;
+            border-radius: 100%;
+        }
+        .middle_square {
+            margin-top: 5px;
+            width: 98px;
+            height: 98px;
+            display: inline-block;
+        }
+        .middle_circular {
+            margin-top: 5px;
+            width: 98px;
+            height: 98px;
+            border-radius: 100%;
+            display: inline-block;
+        }
+        .small_square {
+            margin-top: 5px;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+        }
+        .small_circular {
+            margin-top: 5px;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            border-radius: 100%;
+        }
+    }
+    .previewImg {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+    .tailoring-content-three{
+        width: 100%;
+        border-top: 1px solid #DDD ;
+        height:44px;
+        .flexbox;
+        justify-content: space-between;
+        .commonbtn{
+            width:46px;
+            height:30px;
+            background: #fff;
+            border:1px solid #C9C9C9;
+            cursor: pointer;
+            &+.commonbtn{
+                border-left:0;
+            }
+            &:hover{
+                color:@mainblue;
+            }
+        }
+    }
+    .primarybtn{
+        position: relative;
+    }
+    .hidefile{
+        position: absolute;
+        width:90px;
+        top:0;
+        left:0;
+        opacity: 0;
+        height: 100%;
+    }
+    .primarybtn+.primarybtn{
+        margin-left:14px;
+    }
+}

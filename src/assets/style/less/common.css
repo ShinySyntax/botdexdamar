@@ -1,0 +1,266 @@
+.flexbox {
+  display: flex;
+  align-items: center;
+}
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+}
+.clearfloat {
+  zoom: 1;
+}
+.clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
+.overell {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* 主体 */
+.tioimcontainer {
+  width: 100%;
+  height: 100%;
+  min-width: 800px;
+  position: relative;
+  background: url(~@/assets/imgs/login/mainbg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.bodycontent {
+  width: 100vw;
+  height: 100vh;
+  min-height: 600px;
+  min-width: 970px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+/* 按钮样式 */
+.primarybtn {
+  width: 90px;
+  height: 30px;
+  border-radius: 4px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  background: linear-gradient(134deg, #44baf8 0%, #3596fc 100%);
+  box-shadow: 0px 2px 6px #8dbff8;
+  color: #fff;
+}
+.primarybtn:active {
+  box-shadow: 0px 0 0 transparent;
+}
+.primarybtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.primarybtn.default {
+  box-shadow: 0px 2px 6px rgba(127, 150, 190, 0.49);
+  color: #333;
+  background: linear-gradient(125deg, #f5f5f5 0%, #edeff3 100%);
+}
+.primarybtn.default:active {
+  box-shadow: 0px 0 0 transparent;
+}
+/* 重置element样式 */
+.el-form-item {
+  margin-bottom: 30px;
+}
+/* 默认图片大小 */
+.error-img {
+  width: 100%;
+  height: 100%;
+}
+/* 弹框 */
+.modelbody {
+  min-width: 290px;
+  background: #fff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  z-index: 1000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 30px;
+  animation: bounceIn 0.3s;
+}
+.modelbody .maintitle {
+  line-height: 20px;
+  padding: 30px 0;
+  text-align: center;
+}
+.modelbody .maintitle .smtitle {
+  font-size: 12px;
+}
+.modelbody .singletitle {
+  line-height: 20px;
+  padding: 46px 0 37px;
+  text-align: center;
+}
+.modelbody .title {
+  display: flex;
+  align-items: center;
+  line-height: 42px;
+  padding: 0 25px 0 30px;
+}
+.modelbody .title label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-text-overflow: ellipsis;
+  -moz-text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+.modelbody .title .iconIMweb_cancel_cancel {
+  font-size: 24px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.modelbody .button-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modelbody .primarybtn + .primarybtn {
+  margin-left: 46px;
+}
+.animate {
+  animation: bounceIn 0.3s;
+}
+@keyframes bounceIn {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.bounceTopIn {
+  animation: bounceTopIn 0.2s;
+  transform-origin: 0 0;
+}
+.bounceBotIn {
+  animation: bounceTopIn 0.2s;
+}
+@keyframes bounceTopIn {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+/* 自定义switch */
+.tioim-switch input[type="checkbox"],
+.tioim-switch .switch-span {
+  appearance: none;
+  margin: 0;
+  position: relative;
+  width: 28px;
+  height: 14px;
+  border: 1px solid #efefef;
+  outline: 0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: #efefef;
+  transition: border-color 0.3s, background-color 0.3s;
+  vertical-align: middle;
+  display: inline-block;
+  cursor: pointer;
+}
+.tioim-switch input[type="checkbox"]:after,
+.tioim-switch .switch-span:after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 100%;
+  transition: all 0.3s;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 1px solid #efefef;
+}
+.tioim-switch input[type="checkbox"]:checked,
+.tioim-switch .switch-span.checked {
+  border-color: #3596fc;
+  background-color: #3596fc;
+}
+.tioim-switch input[type="checkbox"]:checked::after,
+.tioim-switch .switch-span.checked::after {
+  left: 100%;
+  margin-left: -12px;
+}
+/* 右键操作框 */
+.contextmenu-ul {
+  position: absolute;
+  top: 50px;
+  z-index: 20;
+  text-align: center;
+  border-radius: 4px;
+  box-shadow: 0px 3px 20px rgba(68, 68, 68, 0.16);
+  background: #fff;
+  line-height: 40px;
+  z-index: 1999;
+  max-width: 200px;
+}
+.contextmenu-ul li {
+  min-width: 100px;
+  cursor: pointer;
+  padding: 0 20px;
+}
+.contextmenu-ul li:hover {
+  background: #edeff3;
+}
+.tm-checkbox {
+  color: #666;
+  display: inline-block;
+  line-height: 20px;
+  cursor: pointer;
+}
+.tm-checkbox input[type="checkbox"] {
+  appearance: none;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  background: url(~@/assets/imgs/common/check.png) no-repeat;
+  background-size: 100% 100%;
+}
+.tm-checkbox input[type="checkbox"]:checked {
+  background: url(~@/assets/imgs/common/checked.png) no-repeat;
+  background-size: 100% 100%;
+}
+/* 搜索无数据 */
+.nodata-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+  line-height: 80px;
+  height: 40vh;
+  justify-content: center;
+}
+.nodata-content img {
+  width: 8.125vw;
+  min-width: 100px;
+}
+.flex_column_between_Center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

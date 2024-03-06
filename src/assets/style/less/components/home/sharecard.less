@@ -1,0 +1,74 @@
+.card-container{
+    .send-card {
+        background: #fff;
+        position: absolute;
+        z-index: 99;
+        box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        width: 342px;
+        height: 52vh;
+        bottom: 184px;
+        left: 590px;
+    }
+    .letter-index{
+        padding-left: 13px;
+        color: #999;
+        font-size: 12px;
+        line-height: 20px
+    }
+    .sharebody{
+        width:268px;
+        min-width: auto;
+        padding:0 30px 30px;
+        .share-content{
+            width:210px;
+            border-radius: 4px;
+        }
+        .card-main{
+            .flexbox;
+            padding:12px;
+            background: url(~@/assets/imgs/home/card.png) no-repeat;
+            background-size:100% 100% ;
+            .card-avatar{
+                width:44px;
+                height: 44px;
+                margin-right:5px ;
+                flex-shrink: 0;
+            }
+            .share-name{
+                color:#fff;
+                flex:1;
+                .overell;
+            }
+        }
+        .share-tips{
+            line-height: 22px;
+            padding-left:11px;
+            color:@fontblue;
+            font-size:10px;
+            border:1px solid @fontblue;
+            border-top:0;
+            border-radius:0 0 4px 4px;
+        }
+    }
+    .to-title{
+        margin-top:10px;
+        line-height: 38px;
+        font-size:12px;
+    }
+    .to-content{
+        .flexbox;
+        margin-bottom:30px;
+        .to-avatar{
+            width:40px;
+            height:40px;
+            flex-shrink: 0;
+        }
+        .to-name{
+            flex:1;
+            .overell;
+            padding-left:10px;
+        }
+    }
+    
+}
