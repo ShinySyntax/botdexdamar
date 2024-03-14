@@ -76,9 +76,9 @@ export default {
     },
     /* 进入焦点及获取聊天列表 */
     getMsg() {
-      this.getFocus() //焦点接口
       //历史消息
       this.$refs.msglist.getMsgList()
+      this.getFocus() //焦点接口
     },
     /* 隐藏搜索列表 */
     hideSearchList() {

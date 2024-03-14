@@ -286,9 +286,9 @@ export default {
           //左侧会话列表-会话名称修改
           let leftChatCol = this.chatList.find(item => item.bizid == uid);
           if (leftChatCol) {
-            leftChatCol.name = remarkname;
-          }
-        }
+              leftChatCol.remarkname = remarkname;
+            }
+                  }
         this.showRemark = false;
         msgTips("修改成功");
       } else {
