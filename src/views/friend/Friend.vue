@@ -4,10 +4,10 @@
 		<!-- 搜索 -->
 		<Search :show.sync="searchShow"></Search>
 		<!-- 好友列表 -->
-		<FriendList ref="friendlist" v-show="!searchShow" :type="type" :friendid="friendid"  @setFriendId="setFriendId" @setType="setType" @sendCard="sendCard" @sendMsg="sendMsg" @delFriend="delFriend"></FriendList>
+		<FriendList ref="friendlist" v-show="!searchShow" :type="type" :friendInfo="friendInfo"  @setFriendInfo="setFriendInfo" @setType="setType" @sendCard="sendCard" @sendMsg="sendMsg" @delFriend="delFriend"></FriendList>
 	</div>
 	<!-- 好友信息 -->
-	<FriendInfo ref="friendinfo" :type="type" :friendid="friendid" @sendCard="sendCard"></FriendInfo>
+	<FriendInfo ref="friendinfo" :type="type" :friendInfo="friendInfo" @sendCard="sendCard" @setFriendInfo="setFriendInfo"></FriendInfo>
 	<!-- 发送名片 -->
 	<TransMsg :transShow.sync="sendShow" :transType="sendType" :transData="data"></TransMsg>
 </div>
@@ -23,7 +23,7 @@ export default {
 	data(){
 		return {
 			searchShow:false,//搜索显示状态
-			friendid:'',//好友id
+			friendInfo:{},//好友信息
 			type:1,//右侧显示类型  1:新的朋友 ；2:好友信息
 			sendShow:false,//发送名片弹框显示状态
 			sendType:2,
@@ -42,8 +42,8 @@ export default {
 	methods:{
 		...mapMutations(['setApplyThis']),
 		/* 设置好友uid */
-		setFriendId(val){
-			this.friendid=val.uid;
+		setFriendInfo(val){
+			this.friendInfo=val;
 		},
 		/* 设置右侧显示类型 */
 		setType(val){
