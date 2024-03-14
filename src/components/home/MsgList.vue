@@ -1131,7 +1131,7 @@ export default {
   watch: {
     MessageList: {
       handler (value, oldvalue) {
-        console.log("数据发生了变化")
+        // console.log("数据发生了变化")
         this.scrollBotm();
       },
       deep: true

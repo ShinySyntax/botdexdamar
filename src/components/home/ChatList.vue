@@ -322,8 +322,7 @@ export default {
         item = chatList[0]
       }
       //操作码：1：进入会话；2：离开会话
-      wsSend(wscommand.WxSessionOperReq, { chatlinkid: this.chatOn, oper: 2 })
-
+      
       let chaton = item.id
       if (chaton == this.chatOn) {
         return
@@ -343,7 +342,7 @@ export default {
       // this.chatLeaveChat();//销毁聊天室
       //保存当前会话变量
       this.setChatOn({ chatOn: chaton, bizid: item.bizid, isGroup })
-
+      
       let hasobj = chatList.find((v) => v.id == item.id)
       if (hasobj) {
         let count = this.allNotRead - hasobj.notreadcount
@@ -353,9 +352,10 @@ export default {
       //避免接收会话详情通知时间差，消息列表标题显示闪动问题，设置会话信息
       this.setChatInfo({ ...item })
       //获取会话详情
-      wsSend(wscommand.WxChatItemInfoReq, { chatlinkid: chaton })
       // this.WxfocusSetInterval(chaton)
       this.$emit("getMsg")
+      wsSend(wscommand.WxSessionOperReq, { chatlinkid: this.chatOn, oper: 2 })
+      wsSend(wscommand.WxChatItemInfoReq, { chatlinkid: chaton })
       this.$nextTick(() => {
         this.$chatEditor.focus()
       })
