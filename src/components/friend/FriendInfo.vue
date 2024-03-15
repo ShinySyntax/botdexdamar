@@ -107,7 +107,7 @@ import UserCardMixins from '@/mixins/usercard.js';//个人信息卡片
 import UserCard from "@/components/UserCard";//个人名片
 import {defineScroll,resUrl } from '@/assets/js/common';
 export default {
-    props:['friendid','type','friendItem'],
+    props:['friendInfo','type','friendItem'],
     data(){
         return {
             applyshow:false,//同意申请弹框
@@ -115,7 +115,7 @@ export default {
             loading:false,
             remarkname:'',//备注
             title:'好友请求',
-            friendInfo:{},//好友信息
+            friendid:'',//好友id
             showRemark:false,//编辑备注名
             userremark:'',//好友备注名
             IgnoreApplyshow:false,//忽略好友申请弹窗
@@ -136,12 +136,10 @@ export default {
                 this.getApplyList();
             }
         },
-        async friendid(nv){
+        friendInfo(nv){
             if(nv){
-                let friendInfo=await this.getUserInfo(nv);//好友信息
-                this.title= friendInfo.remarkname||friendInfo.nick;//标题为备注或昵称
-                friendInfo.avatar=resUrl(friendInfo.avatar);
-                this.friendInfo=friendInfo;
+                this.title= nv.remarkname||nv.nick;//标题为备注或昵称
+                this.friendid = nv.uid;
             }
         }
     },
@@ -213,12 +211,13 @@ export default {
         /* 保存修改备注 */
         async sureSaveRemark(){
             let remarkname= this.userremark;
-            let postdata={remarkname,frienduid: this.friendid};
+            let friendid = this.friendid
+            let postdata={remarkname,frienduid: friendid};
             let res=await friend.modifyRemarkname(postdata);
             let currpath=this.$route.path;
             if(res.ok){
                 //同步-页面内显示备注的数据
-                this.friendInfo.remarkname=remarkname;
+                this.$emit("setFriendInfo", {...this.friendInfo, remarkname: remarkname});
                 this.showRemark=false;
                 msgTips("修改成功");
             }else{

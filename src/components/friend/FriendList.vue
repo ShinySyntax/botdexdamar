@@ -17,7 +17,7 @@
                 <div v-for="v in friendList" :key="v.index">
                     <div class="letter">{{v.index}}</div>
                     <div>
-                        <li :class="['friend-row',(contextmenushow&&contextmenu.data.uid==item.uid)?'hover':'',type==2&&friendid==item.uid?'on':'']"
+                        <li :class="['friend-row',(contextmenushow&&contextmenu.data.uid==item.uid)?'hover':'',type==2&&friendInfo.uid==item.uid?'on':'']"
                         v-for="item in v.data" :key="item.uid" @click="friendClick(item)"  @contextmenu.prevent="chatContextMenu($event,item)">
                         <el-image  class="friend-avatar" :src="item.avatar">
                             <div slot="error" class="image-slot">
@@ -43,10 +43,10 @@
 import {chatcom,friend,msgTips} from '@/axios/path';
 import {defineScroll,resUrl,setContextmenu } from '@/assets/js/common';
 export default {
-    props:['friendid','type'],
+    props:['friendInfo','type'],
     data(){
         return {
-            friendInfo:{},//好友信息
+            friendid:'',//
             myFriends:{
                 pagenum:1,
                 totalPage:0,
@@ -69,16 +69,21 @@ export default {
         this.getFriendsList();
         this.allconfig = JSON.parse(sessionStorage.getItem("allconfig"))
     },
+    watch: {
+        friendInfo(data) {
+            this.getFriendsList();
+        }
+    },
     methods:{
         /* 新的朋友点击事件 */
         newfriendClick(){
             this.$emit('setType',1);
-            this.$emit('setFriendId',{uid:''});
+            this.$emit('setFriendInfo',{});
         },
         /* 好友点击事件 */
         friendClick(item){
             this.$emit('setType',2);
-            this.$emit('setFriendId',item);
+            this.$emit('setFriendInfo',item);
         },
         /* 好友列表 */
         getFriendsList(){

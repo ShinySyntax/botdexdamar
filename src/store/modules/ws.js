@@ -63,7 +63,6 @@ const actions={
     /* 获取会话列表 */
     async getChatRecent({state,commit}){
         await chatcom.chatRecent().then(res=>{
-            // console.log(res)
             // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>????????????????????????????!!!!!!!!!!!!!!!!!
             if(res.ok){
                 let data=res.data;
