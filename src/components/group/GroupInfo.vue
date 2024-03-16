@@ -183,7 +183,7 @@ import {group,msgTips} from '@/axios/path';
 import {defineScroll,resUrl} from '@/assets/js/common';
 import qrCode from "@/components/qrCode";//二维码
 export default {
-    props:['groupid'],
+    props:['groupInfoData'],
     data(){
         return {
             groupSet:false,
@@ -204,17 +204,23 @@ export default {
             codeValue:'', // 二维码内容
             user_avatar:'',//二维码头像
             qrmsg:"扫码加入群聊",
-            
+            groupid: '',
         }
     },
     watch:{
-        async groupid(nv){
-            if(nv){
+        groupInfoData(nv){
+            if(nv) {
+                this.groupid=nv.groupid
+            }
+            else {
+                this.hasGroup=false
+            }
+        },
+        async groupid(nv, ov){
+            if(nv && nv!==ov ){
                 await this.getGroupInfo();
                 this.getGroupMembers();
                 this.hasGroup=true;
-            }else {
-                this.hasGroup=false;
             }
         },
         groupSet(nv){
@@ -280,6 +286,7 @@ export default {
                     msgTips("保存成功");
                     this.groupInfo.name = this.userName
                     this.showEditName = false
+                    this.$emit("setGroupInfo", {...this.groupInfoData, name: this.userName})
                 }else{
                     msgTips(res.msg);
                 }

@@ -43,7 +43,7 @@ import {chatcom,msgTips} from '@/axios/path';
 import {defineScroll,resUrl,setContextmenu } from '@/assets/js/common';
 import GroupName from '@/components/GroupName';//群名称弹框
 export default {
-    props:['groupid'],
+    props:['groupInfoData'],
     data(){
         return {
             groupList:[],
@@ -59,16 +59,30 @@ export default {
                 name:'',//群名称
                 groupid:''
             },
+            groupid: ''
         }
     },
     created(){
         this.getAllGroupList();
+        if(this.groupInfoData)
+            this.groupid=this.groupInfoData.groupid;
     },
     computed:{
         ...mapState({
             curruid:(state)=>state.User.currUid,
             applyThis:state=>state.Ws.applyThis//当前页面this
         }),
+    },
+    watch: {
+        groupInfoData(nv) {
+            if(nv)
+                this.groupList = this.groupList.map(d => {
+                    if(d.groupid === nv.groupid) {
+                        return {...d, ...nv};
+                    }
+                    return d;
+                })
+        }
     },
     components:{
         GroupName
@@ -91,7 +105,7 @@ export default {
             this.groupList=list;
             this.totalRow=list.length;
             if(!this.groupid){
-                this.$emit("setGroupId",list[0].groupid);
+                this.$emit("setGroupInfo",list[0]);
             }
             this.$nextTick(()=>{
                 defineScroll($("#grouplist"));
@@ -110,7 +124,7 @@ export default {
         },
         /* 群聊点击事件 */
         groupClick(item){
-            this.$emit("setGroupId",item.groupid);
+            this.$emit("setGroupInfo",item);
             this.applyThis.$refs.groupinfo.showEditName = false
         },
          /* 发消息 */
@@ -140,7 +154,7 @@ export default {
                 if(this.groupList.length>0){
                     this.groupClick(this.groupList[0]);
                 }else{
-                    this.$emit("setGroupId",'');
+                    this.$emit("setGroupInfo",{});
                 }
             }
         },

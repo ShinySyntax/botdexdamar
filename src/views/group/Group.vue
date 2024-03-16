@@ -7,8 +7,8 @@
       <GroupList
         ref="grouplist"
         v-show="!searchShow"
-        :groupid="groupid"
-        @setGroupId="setGroupId"
+        :groupInfoData="groupInfo"
+        @setGroupInfo="setGroupInfo"
         @sendCard="sendCard"
         @sendMsg="sendMsg"
       ></GroupList>
@@ -16,7 +16,8 @@
     <!-- 好友信息 -->
     <GroupInfo
       ref="groupinfo"
-      :groupid="groupid"
+      :groupInfoData="groupInfo"
+      @setGroupInfo="setGroupInfo"
       @sendCard="sendCard"
       @sendMsg="sendMsg"
     ></GroupInfo>
@@ -47,7 +48,7 @@ export default {
       sendShow: false,//发送名片弹框显示状态
       sendType: 3,
       data: {},
-      groupid: '',//当前群聊id
+      groupInfo: {},//当前群聊id
     }
   },
   components: {
@@ -62,8 +63,8 @@ export default {
   methods: {
     ...mapMutations(['setApplyThis', 'setChatOn']),
     /* 设置群聊id */
-    setGroupId (groupid) {
-      this.groupid = groupid;
+    setGroupInfo (groupInfo) {
+      this.groupInfo = groupInfo;
     },
     /* 发消息 */
     async sendMsg (groupid) {
